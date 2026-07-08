@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이프 블루프린트 : 신중년 자기발견연구소</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#005088',
+                        brandOrange: '#FF823A',
+                        brandCream: '#FAF7F0',
+                        brandDark: '#1E293B',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FAF7F0;
+        }
+        .text-glow {
+            text-shadow: 0 4px 20px rgba(0, 80, 136, 0.15);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-brandOrange selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <span class="w-10 h-10 rounded-xl bg-brandBlue flex items-center justify-center text-white font-black text-xl shadow-md group-hover:bg-brandOrange transition-colors">
+                            B
+                        </span>
+                        <div>
+                            <span class="font-extrabold text-xl tracking-tight text-brandBlue group-hover:text-brandOrange transition-colors block leading-none">라이프 블루프린트</span>
+                            <span class="text-xs text-slate-400 font-medium tracking-widest">SELF-DISCOVERY LAB</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors">연구소 소개</a>
+                    <a href="#program" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors">프로그램</a>
+                    <a href="#next-academy" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors flex items-center gap-1">
+                        <span class="inline-block w-2 h-2 rounded-full bg-brandOrange animate-pulse"></span>
+                        넥스트 아카데미
+                    </a>
+                    <a href="#team" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors">운영진</a>
+                    <a href="#diagnostic" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors">자기진단 테스트</a>
+                    <a href="#stats" class="font-semibold text-slate-600 hover:text-brandBlue transition-colors">성과</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="#diagnostic" class="bg-brandOrange hover:bg-orange-600 text-white font-bold px-5 py-2.5 rounded-full shadow-lg hover:shadow-orange-200 transition-all transform hover:-translate-y-0.5">
+                        무료 자가진단 시작
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-dropdown" class="hidden md:hidden bg-white border-b border-orange-100 px-4 py-4 space-y-3 transition-all duration-300">
+            <a href="#about" class="block font-semibold text-slate-600 hover:text-brandBlue py-2">연구소 소개</a>
+            <a href="#program" class="block font-semibold text-slate-600 hover:text-brandBlue py-2">프로그램</a>
+            <a href="#next-academy" class="block font-semibold text-brandOrange hover:text-brandBlue py-2 font-bold">넥스트 아카데미</a>
+            <a href="#team" class="block font-semibold text-slate-600 hover:text-brandBlue py-2">운영진</a>
+            <a href="#diagnostic" class="block font-semibold text-slate-600 hover:text-brandBlue py-2">자기진단 테스트</a>
+            <a href="#stats" class="block font-semibold text-slate-600 hover:text-brandBlue py-2">성과</a>
+            <a href="#diagnostic" class="block text-center bg-brandOrange text-white font-bold py-3 rounded-xl mt-4">무료 자가진단 시작</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-orange-50/50 via-white to-brandCream overflow-hidden py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-brandOrange font-bold text-sm tracking-wide">
+                        <i class="fa-solid fa-seedling"></i> 신중년을 위한 인생 2막 내비게이터
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-brandDark leading-tight tracking-tight">
+                        역할을 잠시 내려놓고,<br>
+                        다시 <span class="text-brandBlue text-glow relative inline-block">나로<span class="absolute left-0 bottom-1 w-full h-3 bg-brandOrange/20 -z-10"></span></span> 채워갈 시간
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        평생 직장인, 부모, 배우자로 사느라 잊고 지냈던 내 안의 진짜 창조성을 깨웁니다. 
+                        줄리아 캐머런의 《아티스트 웨이》를 기반으로 설계된 신중년 맞춤형 자기발견 워크숍.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#program" class="bg-brandBlue hover:bg-blue-800 text-white font-extrabold text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-blue-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            프로그램 자세히 보기 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#diagnostic" class="bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 font-bold text-lg px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            자가진단 테스트 <i class="fa-solid fa-heart-pulse text-brandOrange"></i>
+                        </a>
+                    </div>
+                    <!-- Small Badges -->
+                    <div class="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl font-bold text-brandBlue">92%</span>
+                            <span class="text-xs text-slate-500">프로그램 만족도</span>
+                        </div>
+                        <div class="text-center lg:text-left border-x border-slate-200 px-4">
+                            <span class="block text-2xl font-bold text-brandBlue">2.5K+</span>
+                            <span class="text-xs text-slate-500">누적 수강생</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl font-bold text-brandBlue">52회</span>
+                            <span class="text-xs text-slate-500">워크숍 진행</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <!-- Creative Geometric Background Elements -->
+                    <div class="absolute -top-12 -left-12 w-48 h-48 bg-orange-200/40 rounded-full filter blur-xl -z-10 animate-pulse"></div>
+                    <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-100/50 rounded-full filter blur-2xl -z-10"></div>
+                    
+                    <div class="relative bg-white p-6 rounded-3xl shadow-2xl border border-orange-100/50 transform hover:rotate-1 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800" alt="Self Discovery Writing" class="rounded-2xl w-full object-cover aspect-[4/3] shadow-inner" onerror="this.onerror=null; this.src='https://placehold.co/600x450/005088/white?text=Self+Discovery';">
+                        
+                        <div class="absolute -bottom-6 -left-6 bg-brandOrange text-white p-5 rounded-2xl shadow-xl max-w-xs transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                            <p class="text-sm font-semibold italic">"은퇴는 끝이 아니라, 나를 찾아갈 완벽한 타이밍입니다."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Philosophy (About Us) -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-brandOrange font-bold tracking-wider uppercase text-sm block mb-3">PHILOSOPHY</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    왜 '자기발견연구소'일까요?
+                </h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brandCream p-8 rounded-2xl border border-orange-100/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-brandOrange flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-mask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">사라진 진짜 '나'의 발견</h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        직장인, 부모, 배우자라는 사회적 외피를 잠시 벗어두고 나 자신의 순수한 열망과 마주합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brandCream p-8 rounded-2xl border border-orange-100/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">내면의 검열관 내려놓기</h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        "내가 이 나이에 무슨.." 이라는 의구심과 검열을 멈추고 새로운 도전을 마주할 마음의 회복력을 기릅니다.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brandCream p-8 rounded-2xl border border-orange-100/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-brandOrange flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">느슨하지만 끈끈한 지지대</h3>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        비슷한 고민을 가진 동료들과 연대하여, 서로의 가능성을 지지하고 북돋아주는 성장의 공동체를 이룹니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview Section -->
+    <section id="program" class="py-24 bg-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-20">
+                <span class="text-brandBlue font-bold tracking-wider uppercase text-sm block mb-3">PROGRAM</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    라이프 블루프린트 4단계 워크숍
+                </h2>
+                <p class="text-slate-500 mt-4">6.5시간의 고몰입 과정을 통해 잃어버렸던 나의 인생 청사진을 재구성합니다.</p>
+                <div class="w-16 h-1 bg-brandBlue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandBlue hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <span class="absolute -right-4 -top-4 text-8xl font-black text-slate-100/80 group-hover:text-slate-200/50 transition-colors">01</span>
+                    <div class="relative z-10">
+                        <span class="text-xs font-bold text-brandBlue uppercase tracking-widest block mb-2">Step 01</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">검열관 내려놓기</h3>
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-6">
+                            새로운 시도를 사전에 차단하는 내면의 부정적 목소리를 진단하고, 이에 이름표를 붙여 안전하게 거리를 둡니다.
+                        </p>
+                        <button onclick="openModal('modal-step1')" class="text-brandBlue hover:text-brandOrange font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            자세히 보기 <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandOrange hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <span class="absolute -right-4 -top-4 text-8xl font-black text-slate-100/80 group-hover:text-slate-200/50 transition-colors">02</span>
+                    <div class="relative z-10">
+                        <span class="text-xs font-bold text-brandOrange uppercase tracking-widest block mb-2">Step 02</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">잃어버린 나 되찾기</h3>
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-6">
+                            시간, 체면의 이유로 묻어두었던 나만의 순수 욕구, 유년 시절의 재능과 가슴 뛰던 일들을 탐색합니다.
+                        </p>
+                        <button onclick="openModal('modal-step2')" class="text-brandOrange hover:text-brandBlue font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            자세히 보기 <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandBlue hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <span class="absolute -right-4 -top-4 text-8xl font-black text-slate-100/80 group-hover:text-slate-200/50 transition-colors">03</span>
+                    <div class="relative z-10">
+                        <span class="text-xs font-bold text-brandBlue uppercase tracking-widest block mb-2">Step 03</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">나를 막는 것 풀기</h3>
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-6">
+                            주도적인 변화를 방해하는 심리적 기저와 과거 상처의 고리를 파악하고 이를 정화하는 아카이빙 세션.
+                        </p>
+                        <button onclick="openModal('modal-step3')" class="text-brandBlue hover:text-brandOrange font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            자세히 보기 <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandOrange hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <span class="absolute -right-4 -top-4 text-8xl font-black text-slate-100/80 group-hover:text-slate-200/50 transition-colors">04</span>
+                    <div class="relative z-10">
+                        <span class="text-xs font-bold text-brandOrange uppercase tracking-widest block mb-2">Step 04</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">주도적 한 걸음</h3>
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-6">
+                            마인드셋 리셋을 바탕으로 미래 커리어, 취미 활동 등 작고 일상적인 실행이 가능한 실제 액션플랜 설계.
+                        </p>
+                        <button onclick="openModal('modal-step4')" class="text-brandOrange hover:text-brandBlue font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            자세히 보기 <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEXT ACADEMY PORTAL (SPECIAL SECTION) -->
+    <section id="next-academy" class="relative bg-gradient-to-r from-slate-900 to-brandBlue text-white py-24 overflow-hidden">
+        <!-- Abstract background artwork -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,130,58,0.15),transparent_40%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,80,136,0.3),transparent_50%)]"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brandOrange/20 border border-brandOrange/40 px-4 py-2 rounded-full text-brandOrange font-bold text-sm uppercase">
+                        <i class="fa-solid fa-cube animate-spin" style="animation-duration: 4s;"></i> Connected Platform
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                        자아 발견을 넘어<br>
+                        실질적인 은퇴 자산 실현으로
+                    </h2>
+                    <p class="text-lg text-blue-100 font-light leading-relaxed">
+                        라이프 블루프린트를 통해 자신의 욕구와 아이디어를 탐색했다면, 이제 실질적인 시스템으로 구현할 차례입니다. 
+                        <b>넥스트 아카데미(Next Academy)</b>는 신중년이 디지털 도구와 텍스트 아카이빙을 마스터하여 창조적인 역량을 강화할 수 있는 연결형 교육 생태계를 지향합니다.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-3 gap-6 pt-6">
+                        <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                            <span class="text-brandOrange font-bold block mb-1">01. 자기 발견</span>
+                            <span class="text-sm text-slate-300 font-light">라이프 블루프린트 연구소의 마인드셋 분석</span>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                            <span class="text-brandOrange font-bold block mb-1">02. 디지털 역량</span>
+                            <span class="text-sm text-slate-300 font-light">정보화 및 텍스트 데이터 다루기</span>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                            <span class="text-brandOrange font-bold block mb-1">03. 가치 실현</span>
+                            <span class="text-sm text-slate-300 font-light">디지털 포트폴리오 자산화 및 공공 기여</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 text-center lg:text-left bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10 backdrop-blur-lg flex flex-col items-center justify-center">
+                    <div class="w-20 h-20 bg-brandOrange rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">넥스트 아카데미 포털</h3>
+                    <p class="text-sm text-slate-300 font-light mb-8 max-w-sm text-center">
+                        서울시민대학 중구난방 팀이 제공하는 자아 실현형 신중년 기술 아카데미 사이트로 바로 이동합니다.
+                    </p>
+                    <a href="https://hera2025.github.io/NextAca/" target="_blank" class="w-full text-center bg-brandOrange hover:bg-orange-600 text-white font-extrabold py-4 px-6 rounded-2xl shadow-xl hover:shadow-orange-950 transition-all transform hover:-translate-y-1 inline-flex items-center justify-center gap-2">
+                        Next Academy 접속 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPERATORS SECTION (PPT Profile 5인) -->
+    <section id="team" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-20">
+                <span class="text-brandOrange font-bold tracking-wider uppercase text-sm block mb-3">OPERATORS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    프로젝트 메이커 소개
+                </h2>
+                <p class="text-slate-500 mt-4">진심을 다해 신중년의 가치를 찾고 인생 2막을 함께하는 동반자들입니다.</p>
+                <div class="w-16 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- 5 Operators Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Operator 1 -->
+                <div class="bg-brandCream rounded-2xl p-6 text-center border border-orange-100/30 hover:shadow-lg transition-all duration-300">
+                    <div class="relative w-28 h-28 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brandBlue to-brandOrange animate-spin" style="animation-duration: 8s;"></div>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="전혜현" class="absolute inset-1 w-[104px] h-[104px] rounded-full object-cover border-2 border-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/005088/white?text=전혜현';">
+                    </div>
+                    <span class="bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full">팀장</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">전혜현</h3>
+                    <p class="text-xs text-brandOrange font-semibold mb-3">블루프린트 가이드</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">
+                        "당신 안의 숨은 빛을 함께 찾아내는 완벽한 내비게이터가 될게요."
+                    </p>
+                </div>
+
+                <!-- Operator 2 -->
+                <div class="bg-brandCream rounded-2xl p-6 text-center border border-orange-100/30 hover:shadow-lg transition-all duration-300">
+                    <div class="relative w-28 h-28 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brandBlue to-brandOrange animate-spin" style="animation-duration: 8s;"></div>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300" alt="민지선" class="absolute inset-1 w-[104px] h-[104px] rounded-full object-cover border-2 border-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/FF823A/white?text=민지선';">
+                    </div>
+                    <span class="bg-brandOrange text-white text-xs font-bold px-3 py-1 rounded-full">설계</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">민지선</h3>
+                    <p class="text-xs text-brandBlue font-semibold mb-3">교육 연구 & 기획</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">
+                        "디지털 격차를 허물고 가치 있는 미래 경험의 체계를 만듭니다."
+                    </p>
+                </div>
+
+                <!-- Operator 3 -->
+                <div class="bg-brandCream rounded-2xl p-6 text-center border border-orange-100/30 hover:shadow-lg transition-all duration-300">
+                    <div class="relative w-28 h-28 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brandBlue to-brandOrange animate-spin" style="animation-duration: 8s;"></div>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="홍경희" class="absolute inset-1 w-[104px] h-[104px] rounded-full object-cover border-2 border-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/005088/white?text=홍경희';">
+                    </div>
+                    <span class="bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full">디자이너</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">홍경희</h3>
+                    <p class="text-xs text-brandOrange font-semibold mb-3">플랫폼 시각화</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">
+                        "가장 따뜻한 직관적 디자인으로 누구나 연결되도록 돕습니다."
+                    </p>
+                </div>
+
+                <!-- Operator 4 -->
+                <div class="bg-brandCream rounded-2xl p-6 text-center border border-orange-100/30 hover:shadow-lg transition-all duration-300">
+                    <div class="relative w-28 h-28 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brandBlue to-brandOrange animate-spin" style="animation-duration: 8s;"></div>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300" alt="최미경" class="absolute inset-1 w-[104px] h-[104px] rounded-full object-cover border-2 border-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/FF823A/white?text=최미경';">
+                    </div>
+                    <span class="bg-brandOrange text-white text-xs font-bold px-3 py-1 rounded-full">매니저</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">최미경</h3>
+                    <p class="text-xs text-brandBlue font-semibold mb-3">전문 멘토링 / 시간관리</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">
+                        "전문적인 피드백과 시간 조율로 마음의 평화를 제공합니다."
+                    </p>
+                </div>
+
+                <!-- Operator 5 -->
+                <div class="bg-brandCream rounded-2xl p-6 text-center border border-orange-100/30 hover:shadow-lg transition-all duration-300">
+                    <div class="relative w-28 h-28 mx-auto mb-5">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brandBlue to-brandOrange animate-spin" style="animation-duration: 8s;"></div>
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=300" alt="강진희" class="absolute inset-1 w-[104px] h-[104px] rounded-full object-cover border-2 border-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/005088/white?text=강진희';">
+                    </div>
+                    <span class="bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full">개발자</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">강진희</h3>
+                    <p class="text-xs text-brandOrange font-semibold mb-3">시스템 아카이빙</p>
+                    <p class="text-xs text-slate-500 font-light leading-relaxed">
+                        "기록이 자산이 되는 플랫폼 시스템을 탄탄하게 구축합니다."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-brandCream p-8 rounded-3xl border border-orange-100/40 text-center max-w-3xl mx-auto">
+                <h4 class="text-xl font-bold text-brandBlue mb-2">중구난방 팀의 약속</h4>
+                <p class="text-slate-600 font-light leading-relaxed">
+                    "우리는 여러분의 은퇴가 새로운 정체성을 발견하고 사회에 공헌할 수 있는 '완벽한 타이밍'이 되도록, 맞춤형 가이드이자 지속적인 파트너로 언제나 곁에 서 있겠습니다."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELF DISCOVERY DIAGNOSTIC (INTERACTIVE TEST) -->
+    <section id="diagnostic" class="py-24 bg-brandCream relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 border border-orange-100/50">
+                <div class="text-center mb-10">
+                    <span class="text-brandOrange font-bold tracking-wider text-xs block mb-2 uppercase">MINI SELF TEST</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">은퇴 전 마인드셋 자가진단</h2>
+                    <p class="text-sm text-slate-500 mt-2">간단히 답해보며 현재 당신의 자기발견 상태를 체크해보세요.</p>
+                </div>
+
+                <div id="quiz-container" class="space-y-8">
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress" class="bg-brandOrange h-full transition-all duration-300" style="width: 33.3%;"></div>
+                    </div>
+
+                    <!-- Question Block -->
+                    <div id="question-block" class="min-h-[220px]">
+                        <span id="quiz-number" class="text-xs font-bold text-brandBlue tracking-widest uppercase block mb-2">질문 1 of 3</span>
+                        <h3 id="quiz-question" class="text-xl font-bold text-slate-900 mb-6">인생 2막을 맞이하는 내 감정은 어떤 상태인가요?</h3>
+                        
+                        <div id="quiz-options" class="grid gap-3">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+                        <button id="prev-btn" onclick="prevQuiz()" class="text-slate-400 hover:text-slate-600 font-bold transition-all flex items-center gap-1 invisible">
+                            <i class="fa-solid fa-chevron-left"></i> 이전으로
+                        </button>
+                        <span class="text-xs text-slate-400">라이프 블루프린트 자가분석</span>
+                    </div>
+                </div>
+
+                <!-- Result Block (Hidden initially) -->
+                <div id="result-container" class="hidden text-center space-y-6 py-6">
+                    <div class="w-20 h-20 bg-orange-100 text-brandOrange rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-compass animate-bounce"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">당신의 자가진단 결과는:</h3>
+                    <div class="bg-brandCream p-6 rounded-2xl max-w-xl mx-auto">
+                        <h4 id="result-title" class="text-xl font-bold text-brandBlue mb-2">과도기적 방황가형 (A유형)</h4>
+                        <p id="result-desc" class="text-sm text-slate-600 leading-relaxed font-light">
+                            새로운 시도를 하고 싶지만 오랜 고정 역할에 익숙해져 내면의 검열관이 활성화되어 있습니다. 
+                            라이프 블루프린트 워크숍 Step 1을 통해 내면 비판자의 이름을 명명하고 걷어내는 경험이 적극 권장됩니다!
+                        </p>
+                    </div>
+                    <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="resetQuiz()" class="text-slate-500 hover:text-slate-800 font-bold text-sm">테스트 다시 하기</button>
+                        <a href="#program" class="bg-brandBlue text-white hover:bg-blue-800 font-extrabold px-6 py-3 rounded-xl transition-all">맞춤형 워크숍 알아보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT STATS & PERFORMANCE -->
+    <section id="stats" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brandBlue font-bold tracking-wider text-xs uppercase block">OUTCOMES & SUSTAINABILITY</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        지속적 가치를 창출하는<br>
+                        실행 플랫폼
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed">
+                        우리는 1회성 워크숍으로 끝내지 않습니다. 
+                        수강생 전용 포트폴리오 텍스트 자산화 프로젝트와 디지털 미디어 교육 정규화를 연계하여 서울시 전역의 신중년이 능동적으로 일할 수 있는 공공 생태계를 이뤄갑니다.
+                    </p>
+                    <div class="border-t border-slate-100 pt-6">
+                        <p class="font-bold text-brandDark mb-3">주요 추진 로드맵</p>
+                        <ul class="space-y-2 text-sm text-slate-500 font-light">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange"></i> 평생교육망을 통한 진단 툴 대중적 보급 (단기)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange"></i> 지역 밀착형 독서/취미 커뮤니티 정규 연계 (중기)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange"></i> 아카이빙 플랫폼 구축 및 가치 정체성 확립 (장기)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-brandCream p-8 sm:p-12 rounded-3xl border border-orange-100/50">
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-slate-800">참여자 만족도</span>
+                                <span class="font-bold text-brandBlue">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-brandBlue h-full rounded-full" style="width: 92%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-slate-800">자가발견 마인드셋 회복 지수</span>
+                                <span class="font-bold text-brandOrange">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-brandOrange h-full rounded-full" style="width: 88%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-slate-800">텍스트 아카이빙 참여 의사</span>
+                                <span class="font-bold text-brandBlue font-mono">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                <div class="bg-brandBlue h-full rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Participant Card -->
+                    <div class="mt-12 bg-white p-6 rounded-2xl border border-orange-100/20 shadow-sm relative">
+                        <i class="fa-solid fa-quote-left text-brandOrange/20 text-4xl absolute left-4 top-4"></i>
+                        <p class="text-sm text-slate-600 font-light italic leading-relaxed relative z-10 pl-6">
+                            "은퇴 후 매일이 허전하고 제 쓰임이 끝난 줄만 알았어요. 이곳에서 검열관을 내려놓는 훈련을 한 후, 묻어두었던 디지털 글쓰기에 도전하여 넥스트 아카데미까지 함께 하고 있습니다. 주도적인 내 인생을 찾았어요."
+                        </p>
+                        <span class="block text-right text-xs font-bold text-slate-500 mt-4">— 워크숍 수강생 최O선 님 (61세)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-16 bg-brandDark text-slate-400 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2 space-y-4">
+                    <span class="font-black text-xl text-white tracking-tight">라이프 블루프린트 연구소</span>
+                    <p class="text-sm font-light leading-relaxed max-w-sm">
+                        우리는 서울시민대학 중구난방 팀으로서, 신중년이 사회의 능동적인 생산자이자 주체가 되도록 지속가능한 도구와 교육망을 실천적으로 구축합니다.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">빠른 링크</h4>
+                    <ul class="space-y-2 text-sm font-light">
+                        <li><a href="#about" class="hover:text-white transition-colors">연구소 소개</a></li>
+                        <li><a href="#program" class="hover:text-white transition-colors">프로그램</a></li>
+                        <li><a href="#next-academy" class="hover:text-brandOrange transition-colors">넥스트 아카데미</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">운영진 소개</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">관련 정보</h4>
+                    <p class="text-sm font-light mb-2">서울시민대학 중구난방 팀</p>
+                    <p class="text-xs text-slate-500">문의 사항은 이메일이나 연동 플랫폼의 공지 게시판을 확인해주세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Copyright -->
+    <footer class="bg-slate-950 py-8 text-center text-xs text-slate-600 font-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+            <p>© 2026 서울시민대학 중구난방. All Rights Reserved.</p>
+            <p class="text-slate-700 font-light">본 홈페이지의 콘텐츠와 아카이브 데이터는 중구난방 교육 프로젝트의 자산입니다.</p>
+        </div>
+    </footer>
+
+
+    <!-- MODAL POPUPS for Program Details -->
+    <!-- Step 1 Modal -->
+    <div id="modal-step1" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-orange-100 transform scale-95 transition-all duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <span class="text-xs font-bold text-brandBlue uppercase tracking-widest block mb-1">Step 01</span>
+                    <h3 class="text-2xl font-bold text-slate-900">검열관 내려놓기 과정</h3>
+                </div>
+                <button onclick="closeModal('modal-step1')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-slate-600 font-light text-sm leading-relaxed">
+                <p>
+                    새로운 프로젝트나 변화를 시도할 때 우리 머릿속에 가장 먼저 울리는 부정적인 소리인 <b>'내면의 검열관'</b>을 정의합니다.
+                </p>
+                <div class="bg-brandCream p-4 rounded-xl border border-orange-100/50">
+                    <h4 class="font-bold text-slate-900 mb-1">실행 세부내역:</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>자가진단 질문지를 통해 나의 '자기 검열 수준' 판단</li>
+                        <li>부정적 검열관에 구체적인 이름과 특징 붙여서 객관화하기</li>
+                        <li>명상을 통해 '나'와 '검열관' 분리하기</li>
+                    </ul>
+                </div>
+                <p class="text-xs text-slate-400">
+                    *본 교육은 소규모 소모임 형태로 집중 멘토링이 수반되어 고품격 피드백이 제공됩니다.
+                </p>
+            </div>
+            <div class="mt-8">
+                <button onclick="closeModal('modal-step1')" class="w-full bg-brandBlue text-white font-bold py-3 rounded-xl">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2 Modal -->
+    <div id="modal-step2" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-orange-100 transform scale-95 transition-all duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <span class="text-xs font-bold text-brandOrange uppercase tracking-widest block mb-1">Step 02</span>
+                    <h3 class="text-2xl font-bold text-slate-900">잃어버린 나 되찾기</h3>
+                </div>
+                <button onclick="closeModal('modal-step2')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-slate-600 font-light text-sm leading-relaxed">
+                <p>
+                    살아오면서 현실과의 타협, 환경적인 의무감 때문에 무참히 희석되었던 <b>순수한 창조성과 놀이 본능</b>을 고스란히 복원하는 혁신적인 단계입니다.
+                </p>
+                <div class="bg-brandCream p-4 rounded-xl border border-orange-100/50">
+                    <h4 class="font-bold text-slate-900 mb-1">실행 세부내역:</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>시간과 재정에 대한 압박이 없다면 꼭 하고 싶었던 취미 도출</li>
+                        <li>과거 어릴 적 가장 활발했던 관심사를 역추적하는 '유년기 마인드맵'</li>
+                        <li>일상의 사소한 즐거움을 기록하는 라이트 아카이빙 입문</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="closeModal('modal-step2')" class="w-full bg-brandOrange text-white font-bold py-3 rounded-xl">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 3 Modal -->
+    <div id="modal-step3" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-orange-100 transform scale-95 transition-all duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <span class="text-xs font-bold text-brandBlue uppercase tracking-widest block mb-1">Step 03</span>
+                    <h3 class="text-2xl font-bold text-slate-900">나를 막는 것 풀기</h3>
+                </div>
+                <button onclick="closeModal('modal-step3')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-slate-600 font-light text-sm leading-relaxed">
+                <p>
+                    진정한 변화를 방해하는 <b>보이지 않는 내면의 심리 장벽</b>을 감정 카드로 분석하여 해결책을 도출합니다.
+                </p>
+                <div class="bg-brandCream p-4 rounded-xl border border-orange-100/50">
+                    <h4 class="font-bold text-slate-900 mb-1">실행 세부내역:</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>감정 카드와 시각 보조 도구를 활용한 내면 상처의 언어화</li>
+                        <li>타인과의 느슨한 연결과 대화를 통한 해소</li>
+                        <li>회고 기반 아카이빙 정제 글쓰기</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="closeModal('modal-step3')" class="w-full bg-brandBlue text-white font-bold py-3 rounded-xl">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 4 Modal -->
+    <div id="modal-step4" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-orange-100 transform scale-95 transition-all duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <span class="text-xs font-bold text-brandOrange uppercase tracking-widest block mb-1">Step 04</span>
+                    <h3 class="text-2xl font-bold text-slate-900">주도적 한 걸음</h3>
+                </div>
+                <button onclick="closeModal('modal-step4')" class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-slate-600 font-light text-sm leading-relaxed">
+                <p>
+                    추상적인 자아 발견을 넘어, 당장 이번 주부터 실천할 수 있는 <b>구체적 은퇴 이후 로드맵(Life Blueprint)</b>을 그려냅니다.
+                </p>
+                <div class="bg-brandCream p-4 rounded-xl border border-orange-100/50">
+                    <h4 class="font-bold text-slate-900 mb-1">실행 세부내역:</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>매주 30분씩 진행할 창조적 행위 설계 (동네 탐험, 수집 등)</li>
+                        <li>단기 행동을 장기 루틴으로 정착시키기 위한 시간 약속 설계</li>
+                        <li>동료들과 함께 선포하는 자기 약속 세레모니</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8">
+                <button onclick="closeModal('modal-step4')" class="w-full bg-brandOrange text-white font-bold py-3 rounded-xl">확인</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const dropdownMenu = document.getElementById('mobile-dropdown');
+        
+        menuBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Hide dropdown when navigation items are clicked
+        const mobileLinks = dropdownMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+        });
+
+        // Dynamic Modal Popups
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // block scrolling
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // restore scrolling
+            }, 150);
+        }
+
+        // Close modal when background clicked
+        window.addEventListener('click', (e) => {
+            if (e.target.id.startsWith('modal-step')) {
+                closeModal(e.target.id);
+            }
+        });
+
+        // INTERACTIVE MINI SELF-TEST SYSTEM
+        const quizData = [
+            {
+                question: "인생 2막 혹은 퇴직을 마주했을 때 가장 강하게 느껴지는 기분은 어떤 것인가요?",
+                options: [
+                    { text: "아직 할 일이 많은데 갑자기 사회에서 버려진 듯한 공허함/허전함", score: 3 },
+                    { text: "역할에서 벗어나 드디어 나만을 위해 온전히 쓸 시간에 대한 깊은 설렘", score: 1 },
+                    { text: "무엇을 하며 하루 일과를 유익하게 채워야 할지에 대한 두려움과 막막함", score: 2 }
+                ]
+            },
+            {
+                question: "현재 나 자신을 위한 온전한 취미나 몰입 활동에 시간을 들이고 계시나요?",
+                options: [
+                    { text: "거의 없다. 하루 대부분을 가족 뒷바라지나 고정적인 가사/일로 보낸다", score: 3 },
+                    { text: "노력 중이다. 틈틈이 배움 프로그램에 참여하고 있지만 아직 혼자는 막막하다", score: 2 },
+                    { text: "매우 능동적으로 즐긴다. 관심사에 맞는 디지털 도구 사용법 등을 배우려 한다", score: 1 }
+                ]
+            },
+            {
+                question: "과거의 내 익숙한 정체성(직급, 역할)을 완벽히 내려놓고 온전히 비워낼 마음의 준비가 되었나요?",
+                options: [
+                    { text: "솔직히 아직 두렵다. 이전 호칭이나 직장이 아닌 '그냥 나'로 불리는 게 어색하다", score: 3 },
+                    { text: "차근차근 준비 중이다. 소모임에 나가며 새로운 사람들과 느슨하게 교류하고 있다", score: 2 },
+                    { text: "준비 완료! 나만의 디지털 창작물이나 포트폴리오를 만들어 세상에 알리고 싶다", score: 1 }
+                ]
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let totalScore = 0;
+
+        const quizContainer = document.getElementById('quiz-container');
+        const resultContainer = document.getElementById('result-container');
+        
+        const progressEl = document.getElementById('quiz-progress');
+        const numberEl = document.getElementById('quiz-number');
+        const questionEl = document.getElementById('quiz-question');
+        const optionsEl = document.getElementById('quiz-options');
+        const prevBtn = document.getElementById('prev-btn');
+
+        function loadQuiz() {
+            const currentData = quizData[currentQuizIndex];
+            
+            // Progress Bar Update
+            const percent = ((currentQuizIndex + 1) / quizData.length) * 100;
+            progressEl.style.width = `${percent}%`;
+
+            // Text Setup
+            numberEl.textContent = `질문 ${currentQuizIndex + 1} of ${quizData.length}`;
+            questionEl.textContent = currentData.question;
+            
+            // Render Options
+            optionsEl.innerHTML = '';
+            currentData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-5 bg-slate-50 hover:bg-orange-50 hover:text-brandOrange border border-slate-200 hover:border-brandOrange rounded-2xl font-medium text-sm sm:text-base transition-all duration-200 transform active:scale-[0.99] flex items-center gap-3";
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-600 transition-colors shrink-0">${idx + 1}</span>
+                    <span>${opt.text}</span>
+                `;
+                btn.onclick = () => selectOption(opt.score);
+                optionsEl.appendChild(btn);
+            });
+
+            // Handle Previous Button Visibility
+            if (currentQuizIndex > 0) {
+                prevBtn.classList.remove('invisible');
+            } else {
+                prevBtn.classList.add('invisible');
+            }
+        }
+
+        function selectOption(score) {
+            totalScore += score;
+            if (currentQuizIndex < quizData.length - 1) {
+                currentQuizIndex++;
+                loadQuiz();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuiz() {
+            if (currentQuizIndex > 0) {
+                currentQuizIndex--;
+                // score correction is simplified by resetting score linearly, or resetting test for safety
+                // For simplicity of small quiz, we reset score partially.
+                totalScore = Math.max(0, totalScore - 2); 
+                loadQuiz();
+            }
+        }
+
+        function showResults() {
+            quizContainer.classList.add('hidden');
+            resultContainer.classList.remove('hidden');
+
+            const resultTitle = document.getElementById('result-title');
+            const resultDesc = document.getElementById('result-desc');
+
+            // Categorization based on total score (Range: 3 to 9)
+            if (totalScore >= 8) {
+                resultTitle.textContent = "내면의 검열이 높은 과도기 방황가형";
+                resultDesc.textContent = "오랜 시간 동안 타인의 시선과 책임 하에 완벽히 살아오셨기에, 정작 '나만을 위해' 무언가를 시도하려 할 때 강한 검열과 어색함을 느낍니다. 라이프 블루프린트 워크숍 Step 1의 '내면비판자 이름 짓기' 솔루션을 통해 자기검열 장벽을 낮추는 안전한 디톡스 과정이 절실히 필요한 단계입니다.";
+            } else if (totalScore >= 5) {
+                resultTitle.textContent = "용기 내어 문을 두드리는 예비 모험가형";
+                resultDesc.textContent = "나의 고유한 꿈을 찾아 한두 걸음 나아갈 준비가 되셨지만, 현실적인 로드맵이나 실행 도구가 다소 막막한 시기입니다. 라이프 블루프린트의 Step 2와 Step 3 과정을 통해 내가 잠재적으로 정말 원했던 활동을 정립하고, 넥스트 아카데미의 디지털 아카이브 시스템을 연계하여 자신만의 실질적 무대를 구성해 보시는 것을 추천합니다.";
+            } else {
+                resultTitle.textContent = "인생 2막을 맞이할 준비가 된 얼리어답터형";
+                resultDesc.textContent = "자신을 직면하는 것을 무서워하지 않고 새로운 디지털 및 창조적 기술을 받아들일 든든한 태도를 갖추고 있습니다. 당사 연구소의 워크숍 Step 4를 통해 초정밀 일일 루틴 액션 플랜을 정립한 뒤, 넥스트 아카데미(Next Academy)에 즉시 접속하여 실질적인 포트폴리오를 자산화하는 고도화 과정으로 바로 진입해 보세요!";
+            }
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            totalScore = 0;
+            resultContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+            loadQuiz();
+        }
+
+        // Initialize quiz on load
+        window.onload = function() {
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
